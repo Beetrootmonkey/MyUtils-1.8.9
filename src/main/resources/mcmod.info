@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mu",
+  "name": "My Utils",
+  "description": "Adds some random Stuff that i found the game lacked.",
+  "version": "1.0.6",
+  "mcversion": "1.8.9",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["I Am The Issue"],
+  "credits": "The Forge and FML guys, for making this possible",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

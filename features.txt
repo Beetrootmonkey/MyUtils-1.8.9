@@ -1,0 +1,7 @@
+Features:
+- Squids drop one raw squid, which can be cooked and/or eaten
+- Horses drop 1-3 raw horse meat, which can be cooked and/or eaten
+- Sugarcane can be crafted into 4 sticks, using the same recipe that planks use to create sticks
+- Brown and red mushrooms can be crafted into shroom powder from biomes 'o plenty
+
+Furthermore this mod provides thaumcraft integration - that means aspects for the above items, and bonus nuggets for meat.
