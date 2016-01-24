@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mu:items/charcoal_pellet"
+        "layer0": "mu:items/cooked_spider_eye"
     },
     "display": {
         "thirdperson": {
