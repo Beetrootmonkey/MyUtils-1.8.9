@@ -53,8 +53,8 @@ public class Items
 		cooked_squid = new ItemFood(5, 6f, false).setUnlocalizedName("cooked_squid");
 		raw_horse = new ItemFood(3, 1.8f, true).setUnlocalizedName("raw_horse");
 		cooked_horse = new ItemFood(8, 12.8f, true).setUnlocalizedName("cooked_horse");
-		raw_spider = new ItemPoisonous(2, 0.5f, 300, 1).setUnlocalizedName("raw_spider");
-		cooked_spider = new ItemFood(6, 8f, false).setUnlocalizedName("cooked_spider");;
+		raw_spider = new ItemPoisonous(2, 1f, 300, 1).setUnlocalizedName("raw_spider");
+		cooked_spider = new ItemFood(8, 10f, false).setUnlocalizedName("cooked_spider");;
 		raw_spider_leg = new ItemPoisonous(1, 0.2f, 100, 0).setUnlocalizedName("raw_spider_leg");;
 		cooked_spider_leg = new ItemFood(2,  2f, false).setUnlocalizedName("cooked_spider_leg");;
 		cooked_spider_eye = new ItemFood(2,  2f, false).setUnlocalizedName("cooked_spider_eye");;
