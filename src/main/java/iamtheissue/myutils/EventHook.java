@@ -61,8 +61,7 @@ public class EventHook
 		{
 			Random r = new Random();
 			int amount = r.nextInt(6 + event.lootingLevel);
-			// No spider butts for you :P
-			boolean dropButt = false;
+			boolean dropButt = r.nextBoolean();
 			event.drops.add(new EntityItem(event.entity.worldObj, event.entity.posX, event.entity.posY, event.entity.posZ, new ItemStack(Items.raw_spider_leg, amount)));
 			if(dropButt)
 			{
