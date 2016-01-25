@@ -19,7 +19,11 @@ public class Recipes
 		GameRegistry.addSmelting(Items.raw_spider, new ItemStack(Items.cooked_spider), 0.35f);
 		GameRegistry.addSmelting(Items.raw_spider_leg, new ItemStack(Items.cooked_spider_leg), 0.35f);
 		GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("minecraft:spider_eye")), new ItemStack(Items.cooked_spider_eye), 0.35f);
-		GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("minecraft:sapling")), new ItemStack(Items.charcoal_pellet), 0.35f);
+		for(int i = 0; i < 6; i++)
+		{
+			GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("minecraft:sapling"), 1, i), new ItemStack(Items.charcoal_pellet, 2), 0.35f);
+		}
+		
 		
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.coal_pellet, 8), new ItemStack(net.minecraft.init.Items.coal));
@@ -37,7 +41,10 @@ public class Recipes
 			GameRegistry.addShapelessRecipe(new ItemStack(Items.phial_goo, 1, 1), new ItemStack(Items.phial_goo, 1, 0), new ItemStack(Item.getByNameOrId("thaumcraft:tainted"), 1, 1));
 			GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("thaumcraft:taint_log")), new ItemStack(Item.getByNameOrId("thaumcraft:tainted")), 0.35f);
 			ThaumcraftApi.addSmeltingBonus(new ItemStack(Item.getByNameOrId("thaumcraft:taint_log")), new ItemStack(Items.charcoal_pellet, 0, 0));
-			GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("thaumcraft:sapling")), new ItemStack(Items.charcoal_pellet), 0.35f);
+			for(int i = 0; i < 2; i++)
+			{
+				GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("thaumcraft:sapling"), 1, i), new ItemStack(Items.charcoal_pellet, 2), 0.35f);
+			}
 			
 		}
 		if(Loader.isModLoaded("BiomesOPlenty"))
@@ -45,9 +52,21 @@ public class Recipes
 			GameRegistry.addShapelessRecipe(new ItemStack(Item.getByNameOrId("biomesoplenty:shroompowder")), net.minecraft.item.Item.getByNameOrId("minecraft:red_mushroom"));
 			GameRegistry.addShapelessRecipe(new ItemStack(Item.getByNameOrId("biomesoplenty:shroompowder")), net.minecraft.item.Item.getByNameOrId("minecraft:brown_mushroom"));
 			GameRegistry.addShapelessRecipe(new ItemStack(Item.getByNameOrId("minecraft:mushroom_stew")), net.minecraft.item.Item.getByNameOrId("biomesoplenty:shroompowder"), net.minecraft.item.Item.getByNameOrId("biomesoplenty:shroompowder"), net.minecraft.item.Item.getByNameOrId("minecraft:bowl"));
-			GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("biomesoplenty:sapling_0")), new ItemStack(Items.charcoal_pellet), 0.35f);
-			GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("biomesoplenty:sapling_1")), new ItemStack(Items.charcoal_pellet), 0.35f);
-			GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("biomesoplenty:sapling_2")), new ItemStack(Items.charcoal_pellet), 0.35f);
+			for(int i = 0; i < 8; i++)
+			{
+				GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("biomesoplenty:sapling_0"), 1, i), new ItemStack(Items.charcoal_pellet, 2), 0.35f);
+			}
+			for(int i = 0; i < 8; i++)
+			{
+				GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("biomesoplenty:sapling_1"), 1, i), new ItemStack(Items.charcoal_pellet, 2), 0.35f);
+			}
+			for(int i = 0; i < 6; i++)
+			{
+				GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("biomesoplenty:sapling_2"), 1, i), new ItemStack(Items.charcoal_pellet, 2), 0.35f);
+			}
+			
+			
+			
 		}
 	}
 	
