@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=down": { "model": "mu:small_lamp_1" },
+        "facing=up": { "model": "mu:small_lamp_2" },
+        "facing=north": { "model": "mu:small_lamp_3", "y": 180 },
+        "facing=south": { "model": "mu:small_lamp_3" },
+        "facing=west": { "model": "mu:small_lamp_3", "y": 90 },
+        "facing=east": { "model": "mu:small_lamp_3", "y": 270 }
+    }
+}
