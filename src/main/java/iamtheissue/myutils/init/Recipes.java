@@ -25,7 +25,13 @@ public class Recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.coal_pellet, 8), new ItemStack(net.minecraft.init.Items.coal));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.charcoal_pellet, 8), new ItemStack(net.minecraft.init.Items.coal, 1, 1));
 		
-		GameRegistry.addShapedRecipe(new ItemStack(net.minecraft.item.Item.getByNameOrId("minecraft:stick"), 4), new Object[]{"R", "R", 'R', net.minecraft.item.ItemAnvilBlock.getByNameOrId("minecraft:reeds")});
+		GameRegistry.addShapedRecipe(new ItemStack(net.minecraft.item.Item.getByNameOrId("minecraft:stick"), 4), new Object[]{"R", "R", 'R', Item.getByNameOrId("minecraft:reeds")});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.glowstone_block), new Object[]{"GGG", "GGG", "GGG", 'G', Item.getByNameOrId("minecraft:glowstone_dust")});
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.getByNameOrId("minecraft:glowstone_dust"), 9), new ItemStack(Blocks.glowstone_block));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.glowing_sand), new ItemStack(Item.getByNameOrId("minecraft:sand")), new ItemStack(Item.getByNameOrId("minecraft:glowstone_dust")));
+		GameRegistry.addSmelting(new ItemStack(Blocks.glowing_sand), new ItemStack(Blocks.lamp), 0.35f);
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.small_lamp), new ItemStack(Blocks.lamp), new ItemStack(Item.getByNameOrId("minecraft:stick")));
 		
 		if(Loader.isModLoaded("Thaumcraft"))
 		{
