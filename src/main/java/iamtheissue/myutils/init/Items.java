@@ -140,14 +140,18 @@ public class Items
 	
 	public static class ItemPoisonous extends ItemFood
 	{
-		int duration;
-		int amplifier;
+		private int duration;
+		private int amplifier;
 		@Override
-		public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn)
+		public void onFoodEaten(ItemStack stack, World world, EntityPlayer player)
 		{
-			PotionEffect potionEffect =  new PotionEffect(19, duration, amplifier, false, true);
-			playerIn.addPotionEffect(potionEffect);
-			return super.onItemUseFinish(stack, worldIn, playerIn);
+			super.onFoodEaten(stack, world, player);
+			PotionEffect effect = new PotionEffect(19, duration, amplifier);
+			if (!world.isRemote)
+			{
+				player.addPotionEffect(new PotionEffect(effect));
+			}
+	            
 		}
 
 		public ItemPoisonous(int amount, float saturation, int duration, int amplifier)
