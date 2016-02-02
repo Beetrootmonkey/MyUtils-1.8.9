@@ -5,6 +5,9 @@ package iamtheissue.myutils.init;
 import java.util.List;
 
 import iamtheissue.myutils.Reference;
+import iamtheissue.myutils.items.ItemFuelPellet;
+import iamtheissue.myutils.items.ItemPoisonous;
+import iamtheissue.myutils.items.MetaItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -44,7 +47,7 @@ public class Items
 	
 	public static void preInit()
 	{
-		ModelBakery.registerItemVariants(phial_goo, new ModelResourceLocation(Reference.MOD_ID + ":phial_goo_half", "inventory"), new ModelResourceLocation(Reference.MOD_ID + ":phial_goo_full", "inventory"));
+		ModelBakery.registerItemVariants(phial_goo, new ModelResourceLocation(Reference.MOD_ID + ":phial_goo_0", "inventory"), new ModelResourceLocation(Reference.MOD_ID + ":phial_goo_1", "inventory"));
 	}
 	
 	public static void init()
@@ -62,7 +65,7 @@ public class Items
 		coal_pellet = new ItemFuelPellet(200).setUnlocalizedName("coal_pellet");
 		charcoal_pellet = new ItemFuelPellet(200).setUnlocalizedName("charcoal_pellet");
 		
-		phial_goo = new MetaItem("phial_goo");
+		phial_goo = new MetaItem("phial_goo", 2);
 		
 		
 	}
@@ -120,8 +123,8 @@ public class Items
 		registerRender(coal_pellet);
 		registerRender(charcoal_pellet);
 		
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(phial_goo, 0, new ModelResourceLocation(Reference.MOD_ID + ":phial_goo_half", "inventory"));
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(phial_goo, 1, new ModelResourceLocation(Reference.MOD_ID + ":phial_goo_full", "inventory"));
+		registerRender(phial_goo, 0);
+		registerRender(phial_goo, 1);
 		
 		
 		
@@ -138,87 +141,12 @@ public class Items
 	}
 	
 	
-	public static class ItemPoisonous extends ItemFood
-	{
-		private int duration;
-		private int amplifier;
-		@Override
-		public void onFoodEaten(ItemStack stack, World world, EntityPlayer player)
-		{
-			super.onFoodEaten(stack, world, player);
-			PotionEffect effect = new PotionEffect(19, duration, amplifier);
-			if (!world.isRemote)
-			{
-				player.addPotionEffect(new PotionEffect(effect));
-			}
-	            
-		}
-
-		public ItemPoisonous(int amount, float saturation, int duration, int amplifier)
-		{
-			super(amount, saturation, false);
-			this.duration = duration;
-			this.amplifier = amplifier;
-		}
-		
-		
-
-		
-	}
 	
-	public static class ItemFuelPellet extends Item
-	{
-		int burnTime;
-		
-		public int getBurnTime()
-		{
-			return burnTime;
-		}
-		
-		public ItemFuelPellet(int burnTime)
-		{
-			super();
-			this.burnTime = burnTime;
-		}
-	}
 	
-	public static class FuelHandler implements IFuelHandler
-	{
-
-		@Override
-		public int getBurnTime(ItemStack fuel)
-		{
-	        Item itemFuel = fuel.getItem();
-	        if(itemFuel instanceof ItemFuelPellet)
-	        {
-	        	return ((ItemFuelPellet)itemFuel).getBurnTime();
-	        }
-			return 0;
-		}	
-	}
 	
-	public static class MetaItem extends Item
-	{
-
-		
-		@Override
-		public String getUnlocalizedName(ItemStack stack) {
-		    return super.getUnlocalizedName() + "_" + (stack.getItemDamage() == 0 ? "half" : "full");
-		}
-
-		@Override
-		public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
-		    subItems.add(new ItemStack(itemIn, 1, 0));
-		    subItems.add(new ItemStack(itemIn, 1, 1));
-		}
-		
-		
-	    public MetaItem(String unlocalizedName) {
-	        super();
-	        this.setHasSubtypes(true);
-	        this.setUnlocalizedName(unlocalizedName);
-	        //this.setCreativeTab(CreativeTabs.tabMaterials);
-	    }
-	}
+	
+	
+	
+	
 	
 }

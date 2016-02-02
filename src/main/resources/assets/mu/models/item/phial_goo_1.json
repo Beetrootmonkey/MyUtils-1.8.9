@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mu:items/phial_goo_full"
+        "layer0": "mu:items/phial_goo_1"
     },
     "display": {
         "thirdperson": {
