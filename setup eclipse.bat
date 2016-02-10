@@ -1,1 +1,2 @@
-gradlew eclipse
+call gradlew eclipse
+pause
