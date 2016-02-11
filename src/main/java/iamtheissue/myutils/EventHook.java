@@ -60,12 +60,28 @@ public class EventHook
 		else if(event.entity instanceof EntitySpider)
 		{
 			Random r = new Random();
-			int amount = r.nextInt(6 + event.lootingLevel);
+			int amount = 1 + r.nextInt(5 + event.lootingLevel);
 			boolean dropButt = r.nextBoolean();
 			event.drops.add(new EntityItem(event.entity.worldObj, event.entity.posX, event.entity.posY, event.entity.posZ, new ItemStack(Items.raw_spider_leg, amount)));
 			if(dropButt)
 			{
 				event.drops.add(new EntityItem(event.entity.worldObj, event.entity.posX, event.entity.posY, event.entity.posZ, new ItemStack(Items.raw_spider)));
+			}
+		}
+		else if(event.entity instanceof EntityWolf)
+		{
+			if(event.entityLiving.getAge() >= 0)
+			{
+				Random r = new Random();
+				int amount = r.nextInt(3 + event.lootingLevel) + 1;
+				if(event.entity.isBurning())
+				{
+					event.drops.add(new EntityItem(event.entity.worldObj, event.entity.posX, event.entity.posY, event.entity.posZ, new ItemStack(Items.cooked_wolf, amount)));
+				}
+				else
+				{
+					event.drops.add(new EntityItem(event.entity.worldObj, event.entity.posX, event.entity.posY, event.entity.posZ, new ItemStack(Items.raw_wolf, amount)));
+				}
 			}
 		}
 	}
