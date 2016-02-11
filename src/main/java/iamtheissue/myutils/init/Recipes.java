@@ -18,6 +18,7 @@ public class Recipes
 		GameRegistry.addSmelting(Items.raw_horse, new ItemStack(Items.cooked_horse), 0.35f);
 		GameRegistry.addSmelting(Items.raw_spider, new ItemStack(Items.cooked_spider), 0.35f);
 		GameRegistry.addSmelting(Items.raw_spider_leg, new ItemStack(Items.cooked_spider_leg), 0.35f);
+		GameRegistry.addSmelting(Items.raw_wolf, new ItemStack(Items.cooked_wolf), 0.35f);
 		GameRegistry.addSmelting(new ItemStack(Item.getByNameOrId("minecraft:spider_eye")), new ItemStack(Items.cooked_spider_eye), 0.35f);
 		for(int i = 0; i < 6; i++)
 		{

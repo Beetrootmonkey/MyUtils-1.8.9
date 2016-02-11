@@ -15,3 +15,5 @@ tile.lamp.name=Smooth Glowstone
 tile.glowstone_block.name=Glowstone Block
 tile.glowing_sand.name=Glowing Sand
 tile.small_lamp.name=Small Lamp
+item.raw_wolf.name=Raw Wolf Meat
+item.cooked_wolf.name=Cooked Wolf Meat

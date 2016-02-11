@@ -39,6 +39,8 @@ public class Items
 	public static Item raw_spider_leg;
 	public static Item cooked_spider_leg;
 	public static Item cooked_spider_eye;
+	public static Item raw_wolf;
+	public static Item cooked_wolf;
 	
 	public static Item coal_pellet;
 	public static Item charcoal_pellet;
@@ -61,6 +63,8 @@ public class Items
 		raw_spider_leg = new ItemPoisonous(1, 0.2f, 100, 0).setUnlocalizedName("raw_spider_leg");;
 		cooked_spider_leg = new ItemFood(2,  2f, false).setUnlocalizedName("cooked_spider_leg");;
 		cooked_spider_eye = new ItemFood(2,  2f, false).setUnlocalizedName("cooked_spider_eye");;
+		raw_wolf = new ItemFood(2, 1f, true).setUnlocalizedName("raw_wolf");
+		cooked_wolf = new ItemFood(5, 6f, true).setUnlocalizedName("cooked_wolf");
 		
 		coal_pellet = new ItemFuelPellet(200).setUnlocalizedName("coal_pellet");
 		charcoal_pellet = new ItemFuelPellet(200).setUnlocalizedName("charcoal_pellet");
@@ -81,7 +85,9 @@ public class Items
 		GameRegistry.registerItem(raw_spider_leg, raw_spider_leg.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(cooked_spider_leg, cooked_spider_leg.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(cooked_spider_eye, cooked_spider_eye.getUnlocalizedName().substring(5));
-		
+		GameRegistry.registerItem(raw_wolf, raw_wolf.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(cooked_wolf, cooked_wolf.getUnlocalizedName().substring(5));
+
 		GameRegistry.registerItem(coal_pellet, coal_pellet.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(charcoal_pellet, charcoal_pellet.getUnlocalizedName().substring(5));
 		
@@ -101,6 +107,9 @@ public class Items
 		ThaumcraftApi.registerObjectTag(new ItemStack(raw_spider_leg), (new AspectList()).add(Aspect.DEATH, 1).add(Aspect.BEAST, 1).add(Aspect.EARTH, 1));
 		ThaumcraftApi.registerObjectTag(new ItemStack(cooked_spider_leg), (new AspectList()).add(Aspect.LIFE, 1).add(Aspect.CRAFT, 1).add(Aspect.BEAST, 1));
 		ThaumcraftApi.registerObjectTag(new ItemStack(cooked_spider_eye), (new AspectList()).add(Aspect.LIFE, 1).add(Aspect.CRAFT, 1).add(Aspect.BEAST, 1));
+		ThaumcraftApi.registerObjectTag(new ItemStack(raw_wolf), (new AspectList()).add(Aspect.BEAST, 2).add(Aspect.LIFE, 1).add(Aspect.EARTH, 1));
+		ThaumcraftApi.registerObjectTag(new ItemStack(cooked_wolf), (new AspectList()).add(Aspect.LIFE, 2).add(Aspect.CRAFT, 1).add(Aspect.BEAST, 1));
+
 		
 		ThaumcraftApi.registerObjectTag(new ItemStack(phial_goo, 1, 0), (new AspectList()).add(Aspect.FLUX, 2).add(Aspect.AURA, 2));
 		ThaumcraftApi.registerObjectTag(new ItemStack(phial_goo, 1, 1), (new AspectList()).add(Aspect.FLUX, 4).add(Aspect.AURA, 4));
@@ -119,6 +128,8 @@ public class Items
 		registerRender(raw_spider_leg);
 		registerRender(cooked_spider_leg);
 		registerRender(cooked_spider_eye);
+		registerRender(raw_wolf);
+		registerRender(cooked_wolf);
 		
 		registerRender(coal_pellet);
 		registerRender(charcoal_pellet);
